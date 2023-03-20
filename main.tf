@@ -119,7 +119,7 @@ resource "aws_route_table" "private-route-table" {
   for_each = var.private_subnets
     route {
       cidr_block = "0.0.0.0/0"
-      nat_gateway_id = aws_nat_gateway.nat-gateways["public-${split("-",each.value[name])[1]}"].id
+      nat_gateway_id = aws_nat_gateway.nat-gateways["public-${split("-",each.value["name"])[1]}"].id
     }
   route {
     cidr_block = data.aws_vpc.default_vpc.cidr_block
