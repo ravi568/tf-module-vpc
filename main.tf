@@ -65,7 +65,6 @@ resource "aws_nat_gateway" "nat-gateways" {
 }
 
 
-
 #Public Route table
 
 resource "aws_route_table" "public-route-table" {
